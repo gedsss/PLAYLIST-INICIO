@@ -143,7 +143,13 @@ nulo = 0
 soma_par = 0
 
 for i in range(5):
-    num = int(input('Digite um valor: '))
+
+    while True:
+        try:
+            num = int(input('Digite um valor: '))
+            break
+        except ValueError:
+            print('Digite um número válido!')
 
     soma += num
 
@@ -156,11 +162,13 @@ for i in range(5):
 
 media = soma / 5
 
+print('\n')
 print(f'Soma dos números: {soma}')
 print(f'Media dos números: {media}')
 print(f'Valores divisiveis por 5: {div5}')
 print(f'Valores nulos: {nulo}')
 print(f'Soma dos valores pares: {soma_par}')
+print('\n')
 
 
     
