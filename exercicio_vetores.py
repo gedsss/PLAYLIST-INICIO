@@ -17,20 +17,40 @@ print('\n')
 gabarito = []
 
 for i in range(5):
-    respostag = (input(f'Escreva a resposta da {i + 1} questao: '))
-    gabarito.append(respostag)
+
+    while True:
+        try:
+            respostag = (input(f'Escreva a resposta da {i + 1} questao: '))
+            gabarito.append(respostag)
+            break
+        except ValueError:
+            print('Digite uma alternativa válida!')
 
 
 alunos = []
 notas = [] 
 
 for i in range(3):
-    nome = input(f'Digite o nome do aluno {i + 1}: ')
+
+    while True:
+        try:
+            nome = input(f'Digite o nome do aluno {i + 1}: ')
+            break
+        except ValueError:
+            print('Digite um nome válido!')
+
+
     respostas = []
 
     for j in range(5):
-        resposta = (input(f'Digite a resposta para a questão {j + 1}: '))
-        respostas.append(resposta)
+
+        while True:
+            try:
+                resposta = (input(f'Digite a resposta para a questão {j + 1}: '))
+                respostas.append(resposta)
+                break
+            except ValueError:
+                 print('Digite uma alternativa válida!')
 
     nota = 0
     for h in range(5):
