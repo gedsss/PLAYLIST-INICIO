@@ -95,10 +95,32 @@ h = 0
 m = 0
 
 while True:
-    sexo = (input('Digite o sexo: [M/F] ')).strip().upper()
-    idade = int(input('Digite a idade: '))
-    cabelo = (input('Digite a cor do cabelo: (Preto, Castanho, Loiro, Ruivo) '))
-    cont = int(input('Digite 1 caso queira continuar e 2 caso não queira: '))
+    while True:
+        sexo = (input('Digite o sexo: [M/F] ')).strip().upper()
+        if sexo not in ['M', 'F']:
+            print('Digite uma opção válida!')
+        else: 
+            break
+
+    while True:
+        try:
+            idade = int(input('Digite a idade: '))
+            break
+        except ValueError:
+            print('Digite um número válido!')
+    while True:    
+        cabelo = (input('Digite a cor do cabelo: (Preto, Castanho, Loiro, Ruivo) ')).capitalize()
+        if(cabelo != 'Preto' and cabelo != 'Castanho' and cabelo != 'Loiro' and cabelo != 'Ruivo'):
+            print('Digite uma opcão válida!')
+        else:
+            break
+
+    while True:
+        try:        
+            cont = int(input('Digite 1 caso queira continuar e 2 caso não queira: '))
+            break
+        except ValueError:
+            print('Digite uma opção válida!')
 
     if(cont == 2):
         break
