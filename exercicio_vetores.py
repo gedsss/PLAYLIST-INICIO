@@ -3,8 +3,13 @@
 times = []
 
 for i in range(3):
-    time = input('Digite o nome de um time: ')
-    times.append(time)
+    while True:
+        time = input('Digite o nome de um time: ').strip()
+        if time and not time.isdigit():
+            times.append(time)
+            break
+        else:
+            print('Digite um nome válido!')
 
 for i in range(len(times)):
     for j in range(len(times)):
