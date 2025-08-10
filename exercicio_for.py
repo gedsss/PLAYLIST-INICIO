@@ -16,24 +16,48 @@ if n1 > n2:
   
 # Exercicio de notas
 
-alunos = int(input('Quantos alunos a escola possui? '))
+while True:
+    try:
+        alunos = int(input('Quantos alunos a escola possui? '))
+        break
+    except ValueError:
+        print('Digite um número valido!')
+
 
 melhor = 0
 nome = ''
 
 for i in range(alunos):
 
-    alunoN = input('Digite o nome do aluno: ')
-    nota = float(input('Digite a nota do aluno: '))
+    while True:
+            alunoN = input('Digite o nome do aluno: ')
+
+            if alunoN.isalpha():
+                break
+            else:
+                print('Digite um nome válido!')
+
+    
+    while True:
+        try:
+            nota = float(input('Digite a nota do aluno: '))
+            
+            if (nota <= 10) and (nota >= 0):
+                break
+            else:
+                print('Digite uma nota válida!')
+            
+        except ValueError:
+            print('Digite uma nota válida!')
 
     if nota > melhor:
         melhor = nota 
         nome = alunoN
 
-print(melhor)
-print(nome)
+print(f'O melhor aluno foi {nome} com a nota de {melhor}')
 
 # Exercicio super contador 
+
 while(True):
     print('Digite 1 para contar de 1 a 10')
     print('Digite 2 para contar de 10 a 1')
