@@ -1,4 +1,4 @@
-# EXercicio times
+# Exercicio times
 
 times = []
 
