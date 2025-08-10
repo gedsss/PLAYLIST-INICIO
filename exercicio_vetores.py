@@ -78,24 +78,35 @@ print('\n')
 cadeiras = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B9', 'B10']
 
 while True:
-
     print(cadeiras)
     print('\n')
-    afirm = (input('Deseja reservar uma cadeira? S/N ')).strip().upper()
 
-    if (afirm == 'S') or (afirm == 's'):
-        cadeira = print('Qual número da cadeira que deseja reservar? ')
-        if (cadeiras[cadeira] != 'X'):
-            print('Cadeira reservada com sucesso!')
-            cadeiras[cadeira] = 'X'
-        if (cadeiras[cadeira] == 'X'):
-            print('Cadeira ja reservada!')
-    if(afirm == 'N') or (afirm == 'n'):
+    while True:
+        afirm = input('Deseja reservar uma cadeira? S/N ').strip().upper()
+        if afirm not in ['S', 'N']:
+            print('Digite uma opção válida!')
+        else:
+            break
+
+    if afirm == 'S':
+        while True:
+            try:
+                cadeira = int(input('Qual número da cadeira que deseja reservar? (1-10) '))
+                if 1 <= cadeira <= 10:
+                    idx = cadeira - 1
+                    if cadeiras[idx] != 'X':
+                        cadeiras[idx] = 'X'
+                        print('Cadeira reservada com sucesso!')
+                        break
+                    else:
+                        print('Cadeira já reservada!')
+                else:
+                    print('Digite um número entre 1 e 10!')
+            except ValueError:
+                print('Digite um número válido!')
+    elif afirm == 'N':
         print('Saindo...')
         break
-    else:
-        print('Escolha inválida!')
-
 
 
 
