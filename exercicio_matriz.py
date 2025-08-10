@@ -26,12 +26,6 @@ print('\n')
 
 # Exercicio Jogo da Velha
 
-matriz = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-]
-
 def verificar_vitoria(jogador):
     for linha in matriz:
         if all(item == jogador for item in linha):
@@ -47,6 +41,8 @@ def verificar_vitoria(jogador):
         return True
 
     return False
+    
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 while True:
     while True:
@@ -55,7 +51,13 @@ while True:
                 print(l, end=' ')
             print()
         
-        escolha = int(input('Escolha uma posição para O: '))
+        while True:
+            try:
+                escolha = int(input('Escolha uma posição para O: '))
+                break
+            except ValueError:
+                print('Digite uma posição válida!')
+            
         jogada_valida = False
         
         for i in range(3):
@@ -79,7 +81,13 @@ while True:
                 print(l, end=' ')
             print()
         
-        escolha = int(input('Escolha uma posição para X: '))
+        while True:
+            try:
+                escolha = int(input('Escolha uma posição para X: '))
+                break
+            except ValueError:
+                print('Digite uma posição válida!')
+        
         jogada_valida = False
         
         for i in range(3):
