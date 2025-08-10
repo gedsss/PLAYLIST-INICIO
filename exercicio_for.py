@@ -13,6 +13,7 @@ if n1 < n2:
 if n1 > n2:
     for i in range(n1, n2 - 1, -1):
         print(i)
+print('\n')
   
 # Exercicio de notas
 
@@ -55,6 +56,7 @@ for i in range(alunos):
         nome = alunoN
 
 print(f'O melhor aluno foi {nome} com a nota de {melhor}')
+print('\n')
 
 # Exercicio super contador 
 
@@ -62,16 +64,28 @@ while(True):
     print('Digite 1 para contar de 1 a 10')
     print('Digite 2 para contar de 10 a 1')
     print('Digite 3 para sair')
-    menu = float(input(''))
-
+    print('------------------------------------')
+    while True:
+        try:
+            menu = float(input('-> '))
+            print('\n')
+            break
+        except ValueError:
+            print('Digite um número de opção válida!')
+        
     if menu == 1:
+        print('Iniciando a contagem selecionada...')
         for i in range(1, 11):
             print(i)
+        print('\n')
 
     elif menu == 2:
+        print('Iniciando a contagem selecionada...')
         for i in range(10, 0, -1):
             print(i)
+        print('\n')
     elif menu == 3:
+        print('Saindo...')
         break
 print('\n')
 
