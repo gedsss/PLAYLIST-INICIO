@@ -1,10 +1,16 @@
-n1 = int(input('Digite o primeiro número: '))
-n2 = int(input('Digite o segundo número: '))
+while True:
+    try:
+        n1 = int(input('Digite o primeiro número: '))
+        n2 = int(input('Digite o segundo número: '))
+        break
+    except ValueError:
+        print('Por favor digite números válidos')
+
 
 if n1 < n2:
     for i in range(n1, n2 + 1):
         print(i)
-elif n1 > n2:
+if n1 > n2:
     for i in range(n1, n2 - 1, -1):
         print(i)
   
