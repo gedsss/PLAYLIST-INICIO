@@ -53,7 +53,7 @@ def compra():
             idx = produto.index(cod)
             if estoque[idx] >= quant:
                 valor = preco[idx] * quant
-                print(f'O Valor da compra ficará {valor}')
+                print(f'O Valor da compra ficará {valor} reais')
                 estoque[idx] -= quant
                 valor_final += valor
             else:
@@ -81,11 +81,11 @@ def compra():
             print('Opção inválida')
 
     if opcao == '1':
-        print(f'O valor final será de: {valor_final * 0.95}')
+        print(f'O valor final será de: {valor_final * 0.95} reais')
     elif opcao == '2':
-        print(f'O valor final ficará de: {valor_final}')
+        print(f'O valor final ficará de: {valor_final} reais')
     elif opcao == '3':
-        print(f'O valor final ficará de: {valor_final * 0.98}')
+        print(f'O valor final ficará de: {valor_final * 0.98} reais')
     print('-' * 30)
 
 def consultestoque():
